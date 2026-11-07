@@ -26,10 +26,9 @@ This is a binary classification problem. I trained 5 classification models on th
 
 ## c. GitHub repository link
 
-<!-- paste your repo link here -->
 https://github.com/LaxmiNarayanaK/bank-term-deposit-classifier
 
-**Live Streamlit app:** <!-- paste after deploying --> https://<your-app>.streamlit.app
+**Live Streamlit app:** https://bank-term-deposit-classifier.streamlit.app/
 
 Repository structure:
 
@@ -66,7 +65,7 @@ All 5 models were trained on the same training split and evaluated on the same 9
 | Decision Tree | Fairly close to Logistic Regression on F1 (0.371) and MCC (0.324), with the same recall (0.298). AUC is clearly lower (0.809), because a tree with depth 6 gives fewer distinct probability values, so its ranking of clients is rougher. I limited the depth to stop it overfitting the training data. |
 | KNN | The weakest model overall. Accuracy looks fine (0.888), but recall is only 0.154 and MCC is 0.249, so it finds very few of the yes clients. With so few yes cases, most of a client's nearest neighbours are no, so the model mostly predicts no. |
 | Naive Bayes | Behaves differently from the other models. It has the best recall (0.452), so it catches the most subscribers, but the lowest precision (0.309) and accuracy (0.821) because it predicts yes too often. It assumes the features are independent, which isn't really true for columns like duration, pdays and previous. |
-| Support Vector Machine | Has the highest accuracy (0.894) and precision (0.591), so when it predicts yes it's usually right. But recall is just 0.25, so it plays it safe and misses many subscribers. AUC (0.883) is close to Logistic Regression, so it separates the two classes well. It's also the slowest model to train. |
+| Support Vector Machine | Has the highest accuracy (0.894) and precision (0.591), so when it predicts yes it's usually right. But recall is just 0.25, so it plays it safe and misses many subscribers. AUC (0.883) is close to Logistic Regression, so it separates the two classes well. |
 | Overall, Winner for your dataset? | **Logistic Regression.** It has the best AUC, F1 and MCC, and those matter more than accuracy here because only about 11.5% of clients say yes. Even predicting "no" for everyone would score about 88% accuracy, so accuracy alone isn't useful. If the bank mainly wanted to reach as many likely subscribers as possible, Naive Bayes would be worth considering for its higher recall. |
 
 ## How to run locally
