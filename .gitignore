@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+# not used - only bank.csv is needed
+data/bank-full.csv
